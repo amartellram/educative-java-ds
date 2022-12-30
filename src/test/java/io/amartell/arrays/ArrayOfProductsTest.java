@@ -23,7 +23,14 @@ class ArrayOfProductsTest {
   @ParameterizedTest
   @MethodSource("inputAndOutput")
   void findProduct(int[] input, int[] output) {
-    int[] response = ArrayOfProducts.findProduct(input);
-    assertArrayEquals(output, response);
+    int[] result = ArrayOfProducts.findProduct(input);
+    assertArrayEquals(output, result);
+  }
+
+  @ParameterizedTest
+  @MethodSource("inputAndOutput")
+  void findProductLinear(int[] input, int[] output) {
+    int[] result = ArrayOfProducts.findProductLinear(input);
+    assertArrayEquals(output, result);
   }
 }

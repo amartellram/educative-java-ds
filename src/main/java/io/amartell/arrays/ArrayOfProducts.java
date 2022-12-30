@@ -21,12 +21,37 @@ public class ArrayOfProducts {
     }
 
     for (int i = 0; i < arr.length; i++) {
-      for(int j = 0; j < arr.length; j++){
-        if(i != j) productOfValues[i] *= arr[j] ;
+      for (int j = 0; j < arr.length; j++) {
+        if (i != j) {
+          productOfValues[i] *= arr[j];
+        }
       }
     }
 
     return productOfValues;
+  }
+
+  public static int[] findProductLinear(int[] arr) {
+
+    int result[] = new int[arr.length];
+    int product = 1;
+
+    // left iteration
+    for (int i = 0; i < arr.length; i++) {
+      result[i] = product;
+      product *= arr[i];
+    }
+
+    product = 1;
+
+    //right iteration
+    for (int i = arr.length - 1; i >= 0; i--) {
+      result[i] *= product;
+      product *= arr[i];
+    }
+
+    return result;
+
   }
 
 }
