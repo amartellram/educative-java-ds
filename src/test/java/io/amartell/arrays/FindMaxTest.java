@@ -27,4 +27,11 @@ class FindMaxTest {
     int result = FindMax.findMaxSumSubArray(input);
     assertEquals(output, result);
   }
+
+  @ParameterizedTest
+  @MethodSource("inputAndOutput")
+  void findMaxSumSubArrayDP(int[] input, int output) {
+    int result = FindMax.findMaxSumSubArrayDP(input);
+    assertEquals(output, result);
+  }
 }
